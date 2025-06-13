@@ -121,6 +121,17 @@ export const videos: Video[] = [
     duration: 'PT3M30S',
     keywords: 'balance, coordination, stability, movement control, exercise, stephen jepson',
     category: 'Exercise & Movement',
+  },
+  {
+    id: 'advanced-agility-coordination',
+    youtubeId: 'bOP7AdJ0OXU',
+    title: 'Advanced Agility and Coordination Drills',
+    description: 'Challenge yourself with these advanced agility and coordination drills by Stephen Jepson, designed to push your limits and enhance your physical capabilities.',
+    thumbnailUrl: 'https://i.ytimg.com/vi/bOP7AdJ0OXU/hqdefault.jpg',
+    uploadDate: '2023-11-25', // Placeholder date
+    duration: 'PT4M20S', // Placeholder duration
+    keywords: 'advanced agility, coordination drills, physical challenge, stephen jepson, high intensity',
+    category: 'Exercise & Movement',
   }
 ];
 
