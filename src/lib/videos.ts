@@ -84,10 +84,21 @@ export const videos: Video[] = [
     title: 'Playful Agility Drills for Enhanced Movement',
     description: 'Join in with these playful agility drills designed to boost your coordination, sharpen your reflexes, and make fitness fun. Great for all ages looking to add some pep to their step!',
     thumbnailUrl: 'https://i.ytimg.com/vi/nUCFtUEOOcs/hqdefault.jpg',
-    uploadDate: '2023-11-05', // Placeholder date
-    duration: 'PT3M52S', // Placeholder duration
+    uploadDate: '2023-11-05',
+    duration: 'PT3M52S',
     keywords: 'agility drills, playful fitness, coordination, reflexes, movement exercise, stephen jepson inspired',
     category: 'Exercise & Movement',
+  },
+  {
+    id: 'juggling-for-brain-health',
+    youtubeId: '-UdbdDNomTc',
+    title: 'Juggling for Brain Health and Coordination',
+    description: 'Discover the cognitive and physical benefits of juggling with Stephen Jepson. A fun way to improve focus, coordination, and brain function.',
+    thumbnailUrl: 'https://i.ytimg.com/vi/-UdbdDNomTc/hqdefault.jpg',
+    uploadDate: '2023-11-10', // Placeholder date
+    duration: 'PT4M15S', // Placeholder duration
+    keywords: 'juggling, brain health, coordination, cognitive function, focus, stephen jepson, skill development',
+    category: 'Skill Development',
   }
 ];
 
@@ -98,3 +109,4 @@ export function getVideoById(id: string): Video | undefined {
 export function getAllVideos(): Video[] {
   return videos;
 }
+
