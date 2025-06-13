@@ -3,7 +3,7 @@ export interface Video {
   id: string;
   youtubeId: string;
   title: string;
-  description: string;
+  description:string;
   thumbnailUrl: string;
   uploadDate: string; // YYYY-MM-DD
   duration: string; // ISO 8601 format e.g., PT1M30S
@@ -55,6 +55,17 @@ export const videos: Video[] = [
     duration: 'PT18M1S',
     keywords: 'TEDx, play, lifelong learning, agility, balance, coordination, stephen jepson',
     category: 'Talks',
+  },
+  {
+    id: 'dynamic-balance-playful-movement',
+    youtubeId: 'm6KrVBWtE_0',
+    title: 'Dynamic Balance and Playful Movement Techniques',
+    description: 'Explore dynamic balance exercises and playful movements. This video showcases engaging activities to help improve agility and coordination for all ages, inspired by a life of continuous play.',
+    thumbnailUrl: 'https://i.ytimg.com/vi/m6KrVBWtE_0/hqdefault.jpg',
+    uploadDate: '2023-10-26', // Placeholder date, actual date might vary
+    duration: 'PT3M45S', // Placeholder duration, actual duration might vary
+    keywords: 'dynamic balance, playful movement, agility, coordination, exercise, active lifestyle, stephen jepson style',
+    category: 'Exercise & Movement',
   },
 ];
 
