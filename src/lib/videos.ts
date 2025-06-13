@@ -73,11 +73,22 @@ export const videos: Video[] = [
     title: 'Daily Exercises for Better Balance & Coordination',
     description: 'Stephen Jepson demonstrates a series of daily exercises focused on enhancing balance, coordination, and overall physical agility. Suitable for all skill levels.',
     thumbnailUrl: 'https://i.ytimg.com/vi/eICg4CMd2jU/hqdefault.jpg',
-    uploadDate: '2023-11-01', // Placeholder date
-    duration: 'PT4M10S', // Placeholder duration
+    uploadDate: '2023-11-01', 
+    duration: 'PT4M10S', 
     keywords: 'balance exercises, coordination training, daily fitness, agility, stephen jepson, physical health',
     category: 'Health & Fitness',
   },
+  {
+    id: 'playful-agility-drills',
+    youtubeId: 'nUCFtUEOOcs',
+    title: 'Playful Agility Drills for Enhanced Movement',
+    description: 'Join in with these playful agility drills designed to boost your coordination, sharpen your reflexes, and make fitness fun. Great for all ages looking to add some pep to their step!',
+    thumbnailUrl: 'https://i.ytimg.com/vi/nUCFtUEOOcs/hqdefault.jpg',
+    uploadDate: '2023-11-05', // Placeholder date
+    duration: 'PT3M52S', // Placeholder duration
+    keywords: 'agility drills, playful fitness, coordination, reflexes, movement exercise, stephen jepson inspired',
+    category: 'Exercise & Movement',
+  }
 ];
 
 export function getVideoById(id: string): Video | undefined {
