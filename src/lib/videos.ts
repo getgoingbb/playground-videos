@@ -128,10 +128,21 @@ export const videos: Video[] = [
     title: 'Advanced Agility and Coordination Drills',
     description: 'Challenge yourself with these advanced agility and coordination drills by Stephen Jepson, designed to push your limits and enhance your physical capabilities.',
     thumbnailUrl: 'https://i.ytimg.com/vi/bOP7AdJ0OXU/hqdefault.jpg',
-    uploadDate: '2023-11-25', // Placeholder date
-    duration: 'PT4M20S', // Placeholder duration
+    uploadDate: '2023-11-25',
+    duration: 'PT4M20S',
     keywords: 'advanced agility, coordination drills, physical challenge, stephen jepson, high intensity',
     category: 'Exercise & Movement',
+  },
+  {
+    id: 'unlocking-agility-at-any-age',
+    youtubeId: 'EGvP_es007Q',
+    title: 'Unlocking Agility: At Any Age',
+    description: "Stephen Jepson shares his insights and techniques for maintaining and improving agility, balance, and coordination, no matter your age. Embrace playful movement and discover your potential.",
+    thumbnailUrl: 'https://i.ytimg.com/vi/EGvP_es007Q/hqdefault.jpg',
+    uploadDate: '2023-12-01', 
+    duration: 'PT4M30S',
+    keywords: 'agility, balance, coordination, senior fitness, playful movement, stephen jepson, lifelong learning',
+    category: 'Health & Fitness',
   }
 ];
 
