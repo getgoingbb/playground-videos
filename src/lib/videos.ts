@@ -62,10 +62,21 @@ export const videos: Video[] = [
     title: 'Dynamic Balance and Playful Movement Techniques',
     description: 'Explore dynamic balance exercises and playful movements. This video showcases engaging activities to help improve agility and coordination for all ages, inspired by a life of continuous play.',
     thumbnailUrl: 'https://i.ytimg.com/vi/m6KrVBWtE_0/hqdefault.jpg',
-    uploadDate: '2023-10-26', // Placeholder date, actual date might vary
-    duration: 'PT3M45S', // Placeholder duration, actual duration might vary
+    uploadDate: '2023-10-26',
+    duration: 'PT3M45S',
     keywords: 'dynamic balance, playful movement, agility, coordination, exercise, active lifestyle, stephen jepson style',
     category: 'Exercise & Movement',
+  },
+  {
+    id: 'improve-balance-coordination-daily',
+    youtubeId: 'eICg4CMd2jU',
+    title: 'Daily Exercises for Better Balance & Coordination',
+    description: 'Stephen Jepson demonstrates a series of daily exercises focused on enhancing balance, coordination, and overall physical agility. Suitable for all skill levels.',
+    thumbnailUrl: 'https://i.ytimg.com/vi/eICg4CMd2jU/hqdefault.jpg',
+    uploadDate: '2023-11-01', // Placeholder date
+    duration: 'PT4M10S', // Placeholder duration
+    keywords: 'balance exercises, coordination training, daily fitness, agility, stephen jepson, physical health',
+    category: 'Health & Fitness',
   },
 ];
 
