@@ -9,9 +9,8 @@ import { Analytics } from "@vercel/analytics/react"
 const SITE_DOMAIN = 'example.com'; // TODO: Update this to your actual domain
 const SITE_PROTOCOL = 'https';
 const SITE_BASE_URL = `${SITE_PROTOCOL}://${SITE_DOMAIN}`;
-// TODO: Replace this placeholder logo URL with your actual logo.
-// It could be an absolute URL or a path to an image in your `public` folder (e.g., /images/logo.png).
-const SITE_LOGO_URL = `https://placehold.co/200x60.png?text=Playground+Videos`;
+// TODO: Ensure your logo is at public/images/nlpg-logo.png
+const SITE_LOGO_URL = `${SITE_BASE_URL}/images/nlpg-logo.png`; 
 const SITE_NAME = 'Playground Videos';
 const SITE_TAGLINE = 'Never Leave The Playground';
 const FULL_SITE_TITLE = `${SITE_NAME} | ${SITE_TAGLINE}`;
@@ -35,8 +34,10 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     siteName: SITE_NAME,
     images: [{
-      url: SITE_LOGO_URL, // General site logo for OG
+      url: SITE_LOGO_URL,
       alt: `${SITE_NAME} Logo`,
+      width: 128, // Assuming your logo is 128x128 as provided
+      height: 128,
     }],
     locale: 'en_US',
   },
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: FULL_SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: [SITE_LOGO_URL], // General site logo for Twitter
+    images: [SITE_LOGO_URL],
     // site: TWITTER_HANDLE, // Optional
     // creator: TWITTER_HANDLE, // Optional
   },
@@ -71,8 +72,9 @@ function SiteSchema() {
     "url": SITE_BASE_URL,
     "logo": SITE_LOGO_URL,
     "description": SITE_DESCRIPTION,
-    "sameAs": [ // Optional: Add social media links if available
-      "https://www.youtube.com/@StephenJepson"
+    "sameAs": [ 
+      "https://www.youtube.com/@StephenJepson",
+      "https://neverleavetheplayground.com/"
     ]
   };
 
