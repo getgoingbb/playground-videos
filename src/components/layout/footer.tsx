@@ -19,8 +19,7 @@ export function Footer() {
               Learn About Speaking Events
             </Button>
           </Link>
-          <Link href="https://neverleavetheplayground.com/find" target="_blank" rel="noopener noreferrer" className="group">
-             {/* Placeholder URL as none was provided for "Find a Playground" */}
+          <Link href="https://playgrounds.neverleavetheplayground.com/playground-finder" target="_blank" rel="noopener noreferrer" className="group">
             <Button variant="link" className="text-lg text-foreground group-hover:text-primary transition-colors">
               <MapPin className="mr-2 h-5 w-5" />
               Find a Playground Near You
