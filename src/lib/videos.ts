@@ -13,8 +13,8 @@ export interface Video {
   shopUrl?: string;
 }
 
-// Placeholder shop URL - please update this with your actual shop URL
-const VIDEO_SHOP_URL = 'https://neverleavetheplayground.com/shop';
+// Updated video shop URL
+const VIDEO_SHOP_URL = 'https://shop.neverleavetheplayground.com/';
 
 export const videos: Video[] = [
   {
@@ -67,8 +67,8 @@ export const videos: Video[] = [
     title: 'Understanding the Never Leave The Playground Program',
     description: "Get a deeper understanding of the Never Leave The Playground program, its philosophy, and how it can help you stay active and playful at any age. This video dives into the core principles of Stephen Jepson's approach to lifelong vitality.",
     thumbnailUrl: 'https://i.ytimg.com/vi/qh0PlR27qJ0/hqdefault.jpg',
-    uploadDate: '2023-12-12', // Placeholder date
-    duration: 'PT6M30S', // Placeholder duration
+    uploadDate: '2023-12-12',
+    duration: 'PT6M30S',
     keywords: 'program overview, informational, never leave the playground, stephen jepson, philosophy, active lifestyle, play, vitality',
     category: 'Program Information',
   },
@@ -223,3 +223,4 @@ export function getAllVideos(): Video[] {
   
   return [...regularVideos, ...premiumPreviews];
 }
+
