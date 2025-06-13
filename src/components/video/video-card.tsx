@@ -1,9 +1,10 @@
+
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Video } from '@/lib/videos';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { PlayCircle } from 'lucide-react';
+import { PlayCircle, ShoppingCart } from 'lucide-react';
 
 interface VideoCardProps {
   video: Video;
@@ -37,12 +38,23 @@ export function VideoCard({ video }: VideoCardProps) {
         </CardContent>
       </Link>
       <div className="p-4 pt-0 mt-auto">
-        <Link href={`/videos/${video.id}`} legacyBehavior passHref>
+        <Link href={`/videos/${video.id}`} passHref legacyBehavior>
           <Button variant="outline" className="w-full hover:bg-accent hover:text-accent-foreground">
             Watch Video
           </Button>
         </Link>
       </div>
+      {video.isPremiumPreview && video.shopUrl && (
+        <div className="px-4 pb-4 pt-2 text-center">
+          <Link href={video.shopUrl} target="_blank" rel="noopener noreferrer" passHref legacyBehavior>
+            <Button variant="outline" size="sm" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground" asChild>
+              <a>
+                <ShoppingCart className="mr-2 h-4 w-4" /> Get Full Video in Shop
+              </a>
+            </Button>
+          </Link>
+        </div>
+      )}
     </Card>
   );
 }

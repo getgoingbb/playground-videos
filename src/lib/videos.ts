@@ -9,7 +9,12 @@ export interface Video {
   duration: string; // ISO 8601 format e.g., PT1M30S
   keywords?: string; // Comma-separated
   category?: string;
+  isPremiumPreview?: boolean;
+  shopUrl?: string;
 }
+
+// Placeholder shop URL - please update this with your actual shop URL
+const VIDEO_SHOP_URL = 'https://neverleavetheplayground.com/shop';
 
 export const videos: Video[] = [
   {
@@ -73,8 +78,8 @@ export const videos: Video[] = [
     title: 'Daily Exercises for Better Balance & Coordination',
     description: 'Stephen Jepson demonstrates a series of daily exercises focused on enhancing balance, coordination, and overall physical agility. Suitable for all skill levels.',
     thumbnailUrl: 'https://i.ytimg.com/vi/eICg4CMd2jU/hqdefault.jpg',
-    uploadDate: '2023-11-01', 
-    duration: 'PT4M10S', 
+    uploadDate: '2023-11-01',
+    duration: 'PT4M10S',
     keywords: 'balance exercises, coordination training, daily fitness, agility, stephen jepson, physical health',
     category: 'Health & Fitness',
   },
@@ -106,8 +111,8 @@ export const videos: Video[] = [
     title: 'Staying Active: Senior Fitness and Play',
     description: 'Stephen Jepson shares tips and exercises for seniors to stay active, maintain mobility, and embrace the joy of play in their daily lives.',
     thumbnailUrl: 'https://i.ytimg.com/vi/Uh45aUEgYQY/hqdefault.jpg',
-    uploadDate: '2023-11-15', 
-    duration: 'PT5M05S', 
+    uploadDate: '2023-11-15',
+    duration: 'PT5M05S',
     keywords: 'senior fitness, active aging, mobility, play, exercise for seniors, stephen jepson',
     category: 'Health & Fitness',
   },
@@ -139,7 +144,7 @@ export const videos: Video[] = [
     title: 'Unlocking Agility: At Any Age',
     description: "Stephen Jepson shares his insights and techniques for maintaining and improving agility, balance, and coordination, no matter your age. Embrace playful movement and discover your potential.",
     thumbnailUrl: 'https://i.ytimg.com/vi/EGvP_es007Q/hqdefault.jpg',
-    uploadDate: '2023-12-01', 
+    uploadDate: '2023-12-01',
     duration: 'PT4M30S',
     keywords: 'agility, balance, coordination, senior fitness, playful movement, stephen jepson, lifelong learning',
     category: 'Health & Fitness',
@@ -165,6 +170,32 @@ export const videos: Video[] = [
     duration: 'PT4M00S',
     keywords: 'play, lifelong vitality, youthfulness, movement, inspiration, stephen jepson philosophy',
     category: 'Inspiration',
+  },
+  {
+    id: 'preview-balance-coordination-essentials',
+    youtubeId: 'kxFTnQadcPw',
+    title: 'Preview: Balance & Coordination Essentials',
+    description: 'A sneak peek into our premium video on mastering balance and coordination. Find the full version in our shop!',
+    thumbnailUrl: 'https://i.ytimg.com/vi/kxFTnQadcPw/hqdefault.jpg',
+    uploadDate: '2024-02-01',
+    duration: 'PT0M45S',
+    keywords: 'preview, balance, coordination, premium, video shop, exercise',
+    category: 'Premium Previews',
+    isPremiumPreview: true,
+    shopUrl: VIDEO_SHOP_URL,
+  },
+  {
+    id: 'preview-agility-movement-mastery',
+    youtubeId: 'll6aoSmWzKY',
+    title: 'Preview: Agility & Movement Mastery',
+    description: 'Check out this preview of our exclusive agility and movement training video. Get the full content in our video shop!',
+    thumbnailUrl: 'https://i.ytimg.com/vi/ll6aoSmWzKY/hqdefault.jpg',
+    uploadDate: '2024-02-05',
+    duration: 'PT0M55S',
+    keywords: 'preview, agility, movement, premium, video shop, fitness',
+    category: 'Premium Previews',
+    isPremiumPreview: true,
+    shopUrl: VIDEO_SHOP_URL,
   }
 ];
 
@@ -175,4 +206,3 @@ export function getVideoById(id: string): Video | undefined {
 export function getAllVideos(): Video[] {
   return videos;
 }
-

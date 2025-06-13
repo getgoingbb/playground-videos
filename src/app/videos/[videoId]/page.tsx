@@ -1,10 +1,13 @@
+
 import { getVideoById, getAllVideos, type Video } from '@/lib/videos';
 import { YoutubeEmbed } from '@/components/video/youtube-embed';
 import { VideoSchemaInjector } from '@/components/video/video-schema';
 import type { GenerateVideoSchemaInput } from '@/ai/flows/generate-video-schema';
 import {notFound} from 'next/navigation';
 import type { Metadata } from 'next';
-import { CalendarDays, Clock, Tag, Layers } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { CalendarDays, Clock, Tag, Layers, ShoppingCart } from 'lucide-react';
 
 interface VideoPageProps {
   params: {
@@ -98,6 +101,21 @@ export default async function VideoPage({ params }: VideoPageProps) {
                   </span>
                 ))}
               </div>
+            </section>
+          )}
+
+          {video.isPremiumPreview && video.shopUrl && (
+            <section className="mt-8 pt-6 border-t text-center">
+              <p className="text-sm text-muted-foreground mb-2">
+                This is a preview of exclusive content.
+              </p>
+              <Link href={video.shopUrl} target="_blank" rel="noopener noreferrer" passHref legacyBehavior>
+                <Button variant="default" size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
+                  <a>
+                    <ShoppingCart className="mr-2 h-4 w-4" /> Purchase Full Video
+                  </a>
+                </Button>
+              </Link>
             </section>
           )}
         </article>
