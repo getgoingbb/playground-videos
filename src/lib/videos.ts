@@ -62,6 +62,17 @@ export const videos: Video[] = [
     category: 'Talks',
   },
   {
+    id: 'program-overview-informational',
+    youtubeId: 'qh0PlR27qJ0',
+    title: 'Understanding the Never Leave The Playground Program',
+    description: "Get a deeper understanding of the Never Leave The Playground program, its philosophy, and how it can help you stay active and playful at any age. This video dives into the core principles of Stephen Jepson's approach to lifelong vitality.",
+    thumbnailUrl: 'https://i.ytimg.com/vi/qh0PlR27qJ0/hqdefault.jpg',
+    uploadDate: '2023-12-12', // Placeholder date
+    duration: 'PT6M30S', // Placeholder duration
+    keywords: 'program overview, informational, never leave the playground, stephen jepson, philosophy, active lifestyle, play, vitality',
+    category: 'Program Information',
+  },
+  {
     id: 'dynamic-balance-playful-movement',
     youtubeId: 'm6KrVBWtE_0',
     title: 'Dynamic Balance and Playful Movement Techniques',
@@ -204,5 +215,11 @@ export function getVideoById(id: string): Video | undefined {
 }
 
 export function getAllVideos(): Video[] {
-  return videos;
+  // Sort videos to show newest first, but keep premium previews at the end
+  const regularVideos = videos.filter(v => !v.isPremiumPreview);
+  const premiumPreviews = videos.filter(v => v.isPremiumPreview);
+
+  regularVideos.sort((a, b) => new Date(b.uploadDate).getTime() - new Date(a.uploadDate).getTime());
+  
+  return [...regularVideos, ...premiumPreviews];
 }
