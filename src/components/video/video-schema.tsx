@@ -22,6 +22,7 @@ export async function VideoSchemaInjector({ videoData }: VideoSchemaProps) {
     
     if (!validatedVideoData.videoUrl) {
       console.warn("VideoSchemaInjector: videoUrl is missing. Schema might be incomplete or invalid.");
+      // Return null if videoUrl is essential and missing, preventing potentially invalid schema.
       return null;
     }
 
@@ -33,9 +34,9 @@ export async function VideoSchemaInjector({ videoData }: VideoSchemaProps) {
       />
     );
   } catch (error) {
-    console.error("Error generating video schema:", error);
-    // Optionally return a basic schema or nothing
-    const fallbackSchema = {
+    console.error("Error generating video schema via AI, using fallback:", error);
+    
+    const fallbackSchema: any = {
       "@context": "https://schema.org",
       "@type": "VideoObject",
       "name": videoData.title || "Untitled Video",
@@ -43,16 +44,26 @@ export async function VideoSchemaInjector({ videoData }: VideoSchemaProps) {
       "thumbnailUrl": videoData.thumbnailUrl || "https://placehold.co/600x400.png",
       "uploadDate": videoData.uploadDate || new Date().toISOString().split('T')[0],
       "duration": videoData.duration || "PT1M",
-      "contentUrl": videoData.videoUrl,
-      // "embedUrl": `https://www.youtube.com/embed/${videoData.videoUrl.split('v=')[1]}` // Example if videoUrl is watch?v=...
     };
+
     if (videoData.videoUrl) {
-       (fallbackSchema as any).contentUrl = videoData.videoUrl;
+       fallbackSchema.contentUrl = videoData.videoUrl;
        const youtubeIdMatch = videoData.videoUrl.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
        if (youtubeIdMatch && youtubeIdMatch[1]) {
-         (fallbackSchema as any).embedUrl = `https://www.youtube.com/embed/${youtubeIdMatch[1]}`;
+         fallbackSchema.embedUrl = `https://www.youtube.com/embed/${youtubeIdMatch[1]}`;
        }
+    } else {
+      // If no videoUrl, cannot generate a meaningful video schema.
+      return null;
     }
+
+    if (videoData.keywords) {
+      fallbackSchema.keywords = videoData.keywords;
+    }
+    if (videoData.category) {
+      fallbackSchema.genre = videoData.category; // 'genre' is a common property for category in VideoObject
+    }
+
 
     return (
       <script

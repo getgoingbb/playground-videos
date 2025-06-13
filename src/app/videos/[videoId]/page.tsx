@@ -15,6 +15,13 @@ interface VideoPageProps {
   };
 }
 
+// TODO: Update this with your actual domain
+const SITE_DOMAIN = 'example.com';
+const SITE_PROTOCOL = 'https';
+const SITE_BASE_URL = `${SITE_PROTOCOL}://${SITE_DOMAIN}`;
+const SITE_NAME = 'Playground Videos';
+
+
 export async function generateStaticParams() {
   const videos = getAllVideos();
   return videos.map((video) => ({
@@ -31,10 +38,60 @@ export async function generateMetadata({ params }: VideoPageProps): Promise<Meta
     };
   }
 
+  const pageUrl = new URL(`/videos/${video.id}`, SITE_BASE_URL).toString();
+  const embedUrl = `https://www.youtube.com/embed/${video.youtubeId}`;
+  const keywordsArray = video.keywords?.split(',').map(k => k.trim()) || [];
+
   return {
-    title: `${video.title} | Playground Videos`,
+    title: video.title, // Uses template from layout.tsx: `${video.title} | Playground Videos`
     description: video.description,
-    // OpenGraph and Twitter card metadata could be added here for better social sharing
+    keywords: keywordsArray,
+    alternates: {
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: video.title,
+      description: video.description,
+      url: pageUrl,
+      siteName: SITE_NAME,
+      images: [
+        {
+          url: video.thumbnailUrl, // Expected to be absolute URL like i.ytimg.com
+          width: 480, // Standard hqdefault.jpg size
+          height: 360,
+          alt: video.title,
+        },
+      ],
+      type: 'video.other',
+      videos: [
+        {
+          url: embedUrl, // URL to the player
+          secureUrl: embedUrl,
+          type: 'text/html', // For YouTube embeds this is appropriate
+          width: 1280, // Standard HD dimensions
+          height: 720,
+        },
+      ],
+      locale: 'en_US',
+      // Additional video metadata for Open Graph
+      // Not all of these are strictly necessary for YouTube embeds but can be good
+      // 'video:release_date': video.uploadDate,
+      // 'video:duration': video.duration, // Needs conversion from ISO 8601 to seconds for some platforms
+      // 'video:tag': keywordsArray, // if applicable
+    },
+    twitter: {
+      card: 'player',
+      title: video.title,
+      description: video.description,
+      images: [video.thumbnailUrl], // URL of image to use in the card
+      player: {
+        url: embedUrl, // HTTPS URL of player iframe
+        width: 1280,
+        height: 720,
+      },
+      // site: '@YourTwitterHandle', // Optional: Your site's Twitter handle
+      // creator: '@VideoCreatorHandle', // Optional: Video creator's Twitter handle
+    },
   };
 }
 
