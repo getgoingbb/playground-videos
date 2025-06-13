@@ -1,3 +1,4 @@
+
 export interface Video {
   id: string;
   youtubeId: string;
@@ -12,15 +13,15 @@ export interface Video {
 
 export const videos: Video[] = [
   {
-    id: 'intro-never-leave-playground',
-    youtubeId: '_gW22_aK4gU',
-    title: 'Jepson: Never Leave the Playground - Intro',
-    description: "Introduction to Stephen Jepson's Never Leave the Playground program. Discover the importance of play and movement for all ages.",
-    thumbnailUrl: 'https://i.ytimg.com/vi/_gW22_aK4gU/hqdefault.jpg',
-    uploadDate: '2012-09-18',
-    duration: 'PT3M25S',
-    keywords: 'play, movement, stephen jepson, coordination, agility, balance',
-    category: 'Health & Fitness',
+    id: 'stephen-jepson-interview-kickoff',
+    youtubeId: 'ycJwrwrYgGM',
+    title: "The Interview That Started It All: Stephen Jepson's Journey",
+    description: "Watch the viral interview that introduced Stephen Jepson and his 'Never Leave The Playground' philosophy to the world. A testament to lifelong agility and play.",
+    thumbnailUrl: 'https://i.ytimg.com/vi/ycJwrwrYgGM/hqdefault.jpg',
+    uploadDate: '2013-03-20',
+    duration: 'PT7M1S',
+    keywords: 'stephen jepson, interview, viral video, agility, play, movement, inspiration, never leave the playground',
+    category: 'Interviews',
   },
   {
     id: 'hand-eye-foot-coordination',
