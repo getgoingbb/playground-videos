@@ -143,6 +143,28 @@ export const videos: Video[] = [
     duration: 'PT4M30S',
     keywords: 'agility, balance, coordination, senior fitness, playful movement, stephen jepson, lifelong learning',
     category: 'Health & Fitness',
+  },
+  {
+    id: 'living-proof-power-of-play',
+    youtubeId: 'd3N2hsuVAt8',
+    title: 'Living Proof: The Power of Playful Movement',
+    description: 'A compelling look at how embracing a lifestyle of play and movement can lead to remarkable vitality and well-being, inspired by Stephen Jepson.',
+    thumbnailUrl: 'https://i.ytimg.com/vi/d3N2hsuVAt8/hqdefault.jpg',
+    uploadDate: '2023-12-05',
+    duration: 'PT3M55S',
+    keywords: 'testimonial, active living, inspiration, playful movement, vitality, well-being, stephen jepson',
+    category: 'Testimonials',
+  },
+  {
+    id: 'embracing-play-lifelong-vitality',
+    youtubeId: 'zyb3cgksl84',
+    title: 'Embracing Play: A Path to Lifelong Vitality',
+    description: 'Explore the profound impact of continuous play and movement on maintaining youthfulness and vitality throughout life. An inspiring message in the spirit of Stephen Jepson.',
+    thumbnailUrl: 'https://i.ytimg.com/vi/zyb3cgksl84/hqdefault.jpg',
+    uploadDate: '2023-12-10',
+    duration: 'PT4M00S',
+    keywords: 'play, lifelong vitality, youthfulness, movement, inspiration, stephen jepson philosophy',
+    category: 'Inspiration',
   }
 ];
 
