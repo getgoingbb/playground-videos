@@ -95,10 +95,32 @@ export const videos: Video[] = [
     title: 'Juggling for Brain Health and Coordination',
     description: 'Discover the cognitive and physical benefits of juggling with Stephen Jepson. A fun way to improve focus, coordination, and brain function.',
     thumbnailUrl: 'https://i.ytimg.com/vi/-UdbdDNomTc/hqdefault.jpg',
-    uploadDate: '2023-11-10', // Placeholder date
-    duration: 'PT4M15S', // Placeholder duration
+    uploadDate: '2023-11-10',
+    duration: 'PT4M15S',
     keywords: 'juggling, brain health, coordination, cognitive function, focus, stephen jepson, skill development',
     category: 'Skill Development',
+  },
+  {
+    id: 'senior-fitness-play',
+    youtubeId: 'Uh45aUEgYQY',
+    title: 'Staying Active: Senior Fitness and Play',
+    description: 'Stephen Jepson shares tips and exercises for seniors to stay active, maintain mobility, and embrace the joy of play in their daily lives.',
+    thumbnailUrl: 'https://i.ytimg.com/vi/Uh45aUEgYQY/hqdefault.jpg',
+    uploadDate: '2023-11-15', 
+    duration: 'PT5M05S', 
+    keywords: 'senior fitness, active aging, mobility, play, exercise for seniors, stephen jepson',
+    category: 'Health & Fitness',
+  },
+  {
+    id: 'balance-coordination-exercises',
+    youtubeId: 'M9vm5_-lE3U',
+    title: 'Balance and Coordination Exercises with Stephen Jepson',
+    description: 'Improve your balance and coordination with these targeted exercises demonstrated by Stephen Jepson. Enhance stability and movement control.',
+    thumbnailUrl: 'https://i.ytimg.com/vi/M9vm5_-lE3U/hqdefault.jpg',
+    uploadDate: '2023-11-20',
+    duration: 'PT3M30S',
+    keywords: 'balance, coordination, stability, movement control, exercise, stephen jepson',
+    category: 'Exercise & Movement',
   }
 ];
 
