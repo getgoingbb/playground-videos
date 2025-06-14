@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
@@ -16,6 +17,8 @@ const SITE_TAGLINE = 'Never Leave The Playground';
 const FULL_SITE_TITLE = `${SITE_NAME} | ${SITE_TAGLINE}`;
 const SITE_DESCRIPTION = "Explore free YouTube videos from Stephen Jepson's Never Leave The Playground program, designed to keep you active and playful at any age.";
 // const TWITTER_HANDLE = '@YourTwitterHandle'; // Optional: Add your Twitter handle
+
+const GA_MEASUREMENT_ID = 'G-Y4NLH6RGLH';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_BASE_URL),
@@ -36,7 +39,7 @@ export const metadata: Metadata = {
     images: [{
       url: SITE_LOGO_URL,
       alt: `${SITE_NAME} Logo`,
-      width: 128, // Assuming your logo is 128x128 as provided
+      width: 128, 
       height: 128,
     }],
     locale: 'en_US',
@@ -49,12 +52,6 @@ export const metadata: Metadata = {
     // site: TWITTER_HANDLE, // Optional
     // creator: TWITTER_HANDLE, // Optional
   },
-  // Favicon and icons can be managed via files in the app directory (favicon.ico, apple-icon.png, etc.)
-  // Or defined here if more control is needed.
-  // icons: {
-  //   icon: '/favicon.ico',
-  //   apple: '/apple-touch-icon.png',
-  // },
 };
 
 export const viewport: Viewport = {
@@ -87,15 +84,6 @@ function SiteSchema() {
     "publisher": {
       "@id": `${SITE_BASE_URL}/#organization`
     },
-    // Optional: Sitelinks Search Box
-    // "potentialAction": {
-    //   "@type": "SearchAction",
-    //   "target": {
-    //     "@type": "EntryPoint",
-    //     "urlTemplate": `${SITE_BASE_URL}/search?q={search_term_string}`
-    //   },
-    //   "query-input": "required name=search_term_string"
-    // }
   };
 
   return (
@@ -134,6 +122,25 @@ export default function RootLayout({
         <Footer />
         <Toaster />
         <Analytics />
+        {/* Google Analytics Scripts */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
       </body>
     </html>
   );
