@@ -2,8 +2,7 @@
 import type { MetadataRoute } from 'next';
 import { getAllVideos, type Video } from '@/lib/videos';
 
-// TODO: Update this to your actual domain, matching layout.tsx
-const SITE_DOMAIN = 'example.com'; 
+const SITE_DOMAIN = 'videos.neverleavetheplayground.com'; // Updated domain
 const SITE_PROTOCOL = 'https';
 const SITE_BASE_URL = `${SITE_PROTOCOL}://${SITE_DOMAIN}`;
 

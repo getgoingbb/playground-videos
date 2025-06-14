@@ -7,8 +7,8 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react"
 
-// Site-wide constants - USER SHOULD UPDATE THESE
-const SITE_DOMAIN = 'example.com'; // TODO: Update this to your actual domain
+// Site-wide constants
+const SITE_DOMAIN = 'videos.neverleavetheplayground.com'; // Updated domain
 const SITE_PROTOCOL = 'https';
 const SITE_BASE_URL = `${SITE_PROTOCOL}://${SITE_DOMAIN}`;
 // TODO: Ensure your logo is at public/images/logo.png

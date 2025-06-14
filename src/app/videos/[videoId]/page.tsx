@@ -15,8 +15,7 @@ interface VideoPageProps {
   };
 }
 
-// TODO: Update this with your actual domain
-const SITE_DOMAIN = 'example.com';
+const SITE_DOMAIN = 'videos.neverleavetheplayground.com'; // Updated domain
 const SITE_PROTOCOL = 'https';
 const SITE_BASE_URL = `${SITE_PROTOCOL}://${SITE_DOMAIN}`;
 const SITE_NAME = 'Playground Videos';
