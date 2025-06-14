@@ -8,14 +8,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react"
 
 // Site-wide constants
-const SITE_DOMAIN = 'videos.neverleavetheplayground.com'; // Updated domain
+const SITE_DOMAIN = 'videos.neverleavetheplayground.com';
 const SITE_PROTOCOL = 'https';
 const SITE_BASE_URL = `${SITE_PROTOCOL}://${SITE_DOMAIN}`;
-// TODO: Ensure your logo is at public/images/logo.png
-const SITE_LOGO_URL = `${SITE_BASE_URL}/images/logo.png`; 
-const SITE_NAME = 'Playground Videos';
+const SITE_LOGO_URL = `${SITE_BASE_URL}/images/logo.png`;
+const SITE_NAME = 'Never Leave The Playground Videos'; // Updated
 const SITE_TAGLINE = 'Never Leave The Playground';
-const FULL_SITE_TITLE = `${SITE_NAME} | ${SITE_TAGLINE}`;
+const FULL_SITE_TITLE = SITE_NAME; // Updated for conciseness
 const SITE_DESCRIPTION = "Explore free YouTube videos from Stephen Jepson's Never Leave The Playground program, designed to keep you active and playful at any age.";
 // const TWITTER_HANDLE = '@YourTwitterHandle'; // Optional: Add your Twitter handle
 
@@ -29,8 +28,8 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
-  authors: [{ name: "Stephen Jepson's Never Leave The Playground Program" }], // Generic author
-  keywords: ['Stephen Jepson', 'Never Leave The Playground', 'agility', 'balance', 'coordination', 'playful movement', 'active living', 'senior fitness'],
+  authors: [{ name: "Stephen Jepson's Never Leave The Playground Program" }],
+  keywords: ['Stephen Jepson', 'Never Leave The Playground', 'agility', 'balance', 'coordination', 'playful movement', 'active living', 'senior fitness', 'videos'],
   openGraph: {
     type: 'website',
     url: SITE_BASE_URL,
@@ -40,7 +39,7 @@ export const metadata: Metadata = {
     images: [{
       url: SITE_LOGO_URL,
       alt: `${SITE_NAME} Logo`,
-      width: 128, 
+      width: 128,
       height: 128,
     }],
     locale: 'en_US',
@@ -66,11 +65,11 @@ function SiteSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${SITE_BASE_URL}/#organization`,
-    "name": SITE_NAME,
-    "url": SITE_BASE_URL,
-    "logo": SITE_LOGO_URL,
+    "name": "Never Leave The Playground", // Main organization name
+    "url": "https://neverleavetheplayground.com/", // Main organization URL
+    "logo": SITE_LOGO_URL, // Can be the same logo if appropriate
     "description": SITE_DESCRIPTION,
-    "sameAs": [ 
+    "sameAs": [
       "https://www.youtube.com/@StephenJepson",
       "https://neverleavetheplayground.com/"
     ]
@@ -79,7 +78,7 @@ function SiteSchema() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": SITE_NAME,
+    "name": SITE_NAME, // "Never Leave The Playground Videos"
     "url": SITE_BASE_URL,
     "description": SITE_DESCRIPTION,
     "publisher": {

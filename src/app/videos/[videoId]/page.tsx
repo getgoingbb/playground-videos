@@ -15,10 +15,10 @@ interface VideoPageProps {
   };
 }
 
-const SITE_DOMAIN = 'videos.neverleavetheplayground.com'; // Updated domain
+const SITE_DOMAIN = 'videos.neverleavetheplayground.com';
 const SITE_PROTOCOL = 'https';
 const SITE_BASE_URL = `${SITE_PROTOCOL}://${SITE_DOMAIN}`;
-const SITE_NAME = 'Playground Videos';
+const SITE_NAME = 'Never Leave The Playground Videos'; // Updated
 
 
 export async function generateStaticParams() {
@@ -41,22 +41,23 @@ export async function generateMetadata({ params }: VideoPageProps): Promise<Meta
   const embedUrl = `https://www.youtube.com/embed/${video.youtubeId}`;
   const keywordsArray = video.keywords?.split(',').map(k => k.trim()) || [];
 
+  // The title template from layout.tsx will be applied: `${video.title} | Never Leave The Playground Videos`
   return {
-    title: video.title, // Uses template from layout.tsx: `${video.title} | Playground Videos`
+    title: video.title,
     description: video.description,
     keywords: keywordsArray,
     alternates: {
       canonical: pageUrl,
     },
     openGraph: {
-      title: video.title,
+      title: video.title, // OG title should be specific to the video
       description: video.description,
       url: pageUrl,
-      siteName: SITE_NAME,
+      siteName: SITE_NAME, // "Never Leave The Playground Videos"
       images: [
         {
-          url: video.thumbnailUrl, // Expected to be absolute URL like i.ytimg.com
-          width: 480, // Standard hqdefault.jpg size
+          url: video.thumbnailUrl,
+          width: 480,
           height: 360,
           alt: video.title,
         },
@@ -64,10 +65,10 @@ export async function generateMetadata({ params }: VideoPageProps): Promise<Meta
       type: 'video.other',
       videos: [
         {
-          url: embedUrl, // URL to the player
+          url: embedUrl,
           secureUrl: embedUrl,
-          type: 'text/html', // For YouTube embeds this is appropriate
-          width: 1280, // Standard HD dimensions
+          type: 'text/html',
+          width: 1280,
           height: 720,
         },
       ],
@@ -77,9 +78,9 @@ export async function generateMetadata({ params }: VideoPageProps): Promise<Meta
       card: 'player',
       title: video.title,
       description: video.description,
-      images: [video.thumbnailUrl], // URL of image to use in the card
+      images: [video.thumbnailUrl],
       player: {
-        url: embedUrl, // HTTPS URL of player iframe
+        url: embedUrl,
         width: 1280,
         height: 720,
       },

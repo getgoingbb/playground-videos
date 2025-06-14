@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -17,7 +18,7 @@ export function Navbar() {
             />
           </Link>
           <Link href="/" className="hover:opacity-80 transition-opacity">
-            <h1 className="text-2xl font-headline font-semibold">Playground Videos</h1>
+            <h1 className="text-xl sm:text-2xl font-headline font-semibold">Never Leave The Playground Videos</h1>
           </Link>
         </div>
         {/* Future navigation items can go here */}
