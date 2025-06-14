@@ -9,7 +9,7 @@ export function Navbar() {
         <div className="flex items-center gap-3"> {/* Group logo and site title */}
           <Link href="https://neverleavetheplayground.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
             <Image
-              src="/images/logo.png"
+              src="/logo.png"
               alt="Never Leave The Playground Logo"
               width={40}
               height={40}

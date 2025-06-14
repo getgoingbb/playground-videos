@@ -11,10 +11,10 @@ import { Analytics } from "@vercel/analytics/react"
 const SITE_DOMAIN = 'videos.neverleavetheplayground.com';
 const SITE_PROTOCOL = 'https';
 const SITE_BASE_URL = `${SITE_PROTOCOL}://${SITE_DOMAIN}`;
-const SITE_LOGO_URL = `${SITE_BASE_URL}/images/logo.png`;
-const SITE_NAME = 'Never Leave The Playground Videos'; // Updated
+const SITE_LOGO_URL = `${SITE_BASE_URL}/logo.png`; // Updated path
+const SITE_NAME = 'Never Leave The Playground Videos';
 const SITE_TAGLINE = 'Never Leave The Playground';
-const FULL_SITE_TITLE = SITE_NAME; // Updated for conciseness
+const FULL_SITE_TITLE = SITE_NAME;
 const SITE_DESCRIPTION = "Explore free YouTube videos from Stephen Jepson's Never Leave The Playground program, designed to keep you active and playful at any age.";
 // const TWITTER_HANDLE = '@YourTwitterHandle'; // Optional: Add your Twitter handle
 
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     images: [{
       url: SITE_LOGO_URL,
       alt: `${SITE_NAME} Logo`,
-      width: 128,
-      height: 128,
+      width: 128, // Consider updating if your logo.png is a different dimension
+      height: 128, // Consider updating if your logo.png is a different dimension
     }],
     locale: 'en_US',
   },
@@ -67,7 +67,7 @@ function SiteSchema() {
     "@id": `${SITE_BASE_URL}/#organization`,
     "name": "Never Leave The Playground", // Main organization name
     "url": "https://neverleavetheplayground.com/", // Main organization URL
-    "logo": SITE_LOGO_URL, // Can be the same logo if appropriate
+    "logo": SITE_LOGO_URL,
     "description": SITE_DESCRIPTION,
     "sameAs": [
       "https://www.youtube.com/@StephenJepson",
@@ -78,7 +78,7 @@ function SiteSchema() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": SITE_NAME, // "Never Leave The Playground Videos"
+    "name": SITE_NAME,
     "url": SITE_BASE_URL,
     "description": SITE_DESCRIPTION,
     "publisher": {
