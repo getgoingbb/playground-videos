@@ -10,8 +10,8 @@ import { Analytics } from "@vercel/analytics/react"
 const SITE_DOMAIN = 'example.com'; // TODO: Update this to your actual domain
 const SITE_PROTOCOL = 'https';
 const SITE_BASE_URL = `${SITE_PROTOCOL}://${SITE_DOMAIN}`;
-// TODO: Ensure your logo is at public/images/nlpg-logo.png
-const SITE_LOGO_URL = `${SITE_BASE_URL}/images/nlpg-logo.png`; 
+// TODO: Ensure your logo is at public/images/logo.png
+const SITE_LOGO_URL = `${SITE_BASE_URL}/images/logo.png`; 
 const SITE_NAME = 'Playground Videos';
 const SITE_TAGLINE = 'Never Leave The Playground';
 const FULL_SITE_TITLE = `${SITE_NAME} | ${SITE_TAGLINE}`;
