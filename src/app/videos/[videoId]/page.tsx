@@ -7,7 +7,7 @@ import {notFound} from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { CalendarDays, Clock, Tag, Layers, ShoppingCart } from 'lucide-react';
+import { CalendarDays, Clock, Tag, Layers, ShoppingCart, ChevronLeft, ChevronRight, HomeIcon } from 'lucide-react';
 
 interface VideoPageProps {
   params: {
@@ -73,11 +73,6 @@ export async function generateMetadata({ params }: VideoPageProps): Promise<Meta
         },
       ],
       locale: 'en_US',
-      // Additional video metadata for Open Graph
-      // Not all of these are strictly necessary for YouTube embeds but can be good
-      // 'video:release_date': video.uploadDate,
-      // 'video:duration': video.duration, // Needs conversion from ISO 8601 to seconds for some platforms
-      // 'video:tag': keywordsArray, // if applicable
     },
     twitter: {
       card: 'player',
@@ -89,8 +84,6 @@ export async function generateMetadata({ params }: VideoPageProps): Promise<Meta
         width: 1280,
         height: 720,
       },
-      // site: '@YourTwitterHandle', // Optional: Your site's Twitter handle
-      // creator: '@VideoCreatorHandle', // Optional: Video creator's Twitter handle
     },
   };
 }
@@ -101,6 +94,11 @@ export default async function VideoPage({ params }: VideoPageProps) {
   if (!video) {
     notFound();
   }
+
+  const allVideos = getAllVideos();
+  const currentIndex = allVideos.findIndex(v => v.id === video.id);
+  const prevVideo = currentIndex > 0 ? allVideos[currentIndex - 1] : null;
+  const nextVideo = currentIndex < allVideos.length - 1 ? allVideos[currentIndex + 1] : null;
 
   const videoDataForSchema: GenerateVideoSchemaInput = {
     title: video.title,
@@ -176,6 +174,46 @@ export default async function VideoPage({ params }: VideoPageProps) {
             </section>
           )}
         </article>
+
+        <section className="mt-12 py-8 border-t">
+          <h2 className="text-xl font-headline font-semibold text-center mb-6">Continue Exploring</h2>
+          <nav className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            {prevVideo ? (
+              <Link href={`/videos/${prevVideo.id}`} passHref>
+                <Button variant="outline" className="w-full sm:w-auto">
+                  <ChevronLeft className="mr-2 h-4 w-4" />
+                  Previous Video
+                </Button>
+              </Link>
+            ) : (
+              <Button variant="outline" className="w-full sm:w-auto" disabled>
+                <ChevronLeft className="mr-2 h-4 w-4" />
+                Previous Video
+              </Button>
+            )}
+
+            <Link href="/" passHref>
+              <Button variant="secondary" className="w-full sm:w-auto">
+                <HomeIcon className="mr-2 h-4 w-4" />
+                All Videos
+              </Button>
+            </Link>
+
+            {nextVideo ? (
+              <Link href={`/videos/${nextVideo.id}`} passHref>
+                <Button variant="outline" className="w-full sm:w-auto">
+                  Next Video
+                  <ChevronRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            ) : (
+              <Button variant="outline" className="w-full sm:w-auto" disabled>
+                Next Video
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
+            )}
+          </nav>
+        </section>
       </div>
     </>
   );
