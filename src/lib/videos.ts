@@ -30,10 +30,10 @@ export const videos: Video[] = [
   },
   {
     id: 'hand-eye-foot-coordination',
-    youtubeId: 'y44nQ4tKi5E',
+    youtubeId: 'PiS-U-YukM4', // Updated
     title: 'Hand, Eye, Foot Coordination with Stephen Jepson',
     description: 'Learn exercises to improve hand, eye, and foot coordination. Stephen Jepson demonstrates simple yet effective techniques.',
-    thumbnailUrl: 'https://i.ytimg.com/vi/y44nQ4tKi5E/hqdefault.jpg',
+    thumbnailUrl: 'https://i.ytimg.com/vi/PiS-U-YukM4/hqdefault.jpg', // Updated
     uploadDate: '2013-05-21',
     duration: 'PT2M38S',
     keywords: 'coordination, hand-eye coordination, foot coordination, exercise, stephen jepson',
