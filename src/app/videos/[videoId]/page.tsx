@@ -166,11 +166,11 @@ export default async function VideoPage({ params }: VideoPageProps) {
               <p className="text-sm text-muted-foreground mb-2">
                 This is a preview of exclusive content.
               </p>
-              <Link href={video.shopUrl} target="_blank" rel="noopener noreferrer" passHref legacyBehavior>
+              <Link href={video.shopUrl} target="_blank" rel="noopener noreferrer">
                 <Button variant="default" size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
-                  <a>
+                  <>
                     <ShoppingCart className="mr-2 h-4 w-4" /> Purchase Full Video
-                  </a>
+                  </>
                 </Button>
               </Link>
             </section>

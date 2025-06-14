@@ -38,7 +38,7 @@ export function VideoCard({ video }: VideoCardProps) {
         </CardContent>
       </Link>
       <div className="p-4 pt-0 mt-auto">
-        <Link href={`/videos/${video.id}`} passHref legacyBehavior>
+        <Link href={`/videos/${video.id}`}>
           <Button variant="outline" className="w-full hover:bg-accent hover:text-accent-foreground">
             Watch Video
           </Button>
@@ -46,11 +46,11 @@ export function VideoCard({ video }: VideoCardProps) {
       </div>
       {video.isPremiumPreview && video.shopUrl && (
         <div className="px-4 pb-4 pt-2 text-center">
-          <Link href={video.shopUrl} target="_blank" rel="noopener noreferrer" passHref legacyBehavior>
+          <Link href={video.shopUrl} target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="sm" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground" asChild>
-              <a>
+              <>
                 <ShoppingCart className="mr-2 h-4 w-4" /> Get Full Video in Shop
-              </a>
+              </>
             </Button>
           </Link>
         </div>
