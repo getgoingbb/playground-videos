@@ -1,5 +1,7 @@
+
 import { getAllVideos } from '@/lib/videos';
 import { VideoCard } from '@/components/video/video-card';
+import { ToyBrick, Puzzle, Shapes } from 'lucide-react';
 
 export default function HomePage() {
   const videos = getAllVideos();
@@ -13,6 +15,11 @@ export default function HomePage() {
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Discover inspiring videos from Stephen Jepson's "Never Leave The Playground" program. Get ready to move, play, and embrace a healthier, more joyful life!
         </p>
+        <div className="flex justify-center space-x-4 mt-6">
+          <ToyBrick className="h-10 w-10 text-accent" />
+          <Shapes className="h-10 w-10 text-primary" />
+          <Puzzle className="h-10 w-10 text-accent" />
+        </div>
       </section>
 
       <section>
