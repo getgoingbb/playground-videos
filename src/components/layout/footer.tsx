@@ -18,7 +18,7 @@ export function Footer() {
           Stephen&apos;s video program has helped thousands rebuild balance, coordination, and confidence &mdash; at any age.
         </p>
         <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="https://jepsonpotteryvideos.com/" target="_blank"
+          <Link href="https://shop.neverleavetheplayground.com/" target="_blank"
             style={{ display: 'inline-block', background: '#facc15', color: '#14532d', padding: '14px 28px', borderRadius: 8, fontWeight: 700, textDecoration: 'none' }}>
             Get Stephen&apos;s Videos &rarr;
           </Link>
