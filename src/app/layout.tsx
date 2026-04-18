@@ -123,6 +123,11 @@ export default function RootLayout({
         <Footer />
         <Toaster />
         <Analytics />
+        {/* Stephen Jepson Chat Widget */}
+        <Script
+          src="https://stephenjepson-chatbot.netlify.app/widget.js"
+          strategy="afterInteractive"
+        />
         {/* Google Analytics Scripts */}
         <Script
           strategy="afterInteractive"
