@@ -8,25 +8,25 @@ body {
 
 @layer base {
   :root {
-    --background: 220 29% 95%; /* #F0F2F5 light gray */
-    --foreground: 0 0% 3.9%;
+    --background: 220 20% 97%;
+    --foreground: 0 0% 8%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 0 0% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 207 99% 58%; /* #2E9AFE vivid blue */
+    --popover-foreground: 0 0% 8%;
+    --primary: 220 65% 22%; /* deep navy */
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
+    --secondary: 220 20% 94%;
     --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 30 99% 58%; /* #FE9A2E energetic orange */
-    --accent-foreground: 0 0% 9%; /* Adjusted for contrast on orange */
+    --muted: 220 15% 94%;
+    --muted-foreground: 0 0% 42%;
+    --accent: 38 95% 50%; /* warm gold #f59e0b */
+    --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 207 99% 58%; /* Use primary color for ring */
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 220 65% 22%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
