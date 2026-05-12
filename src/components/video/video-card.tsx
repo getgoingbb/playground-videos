@@ -19,9 +19,8 @@ export function VideoCard({ video }: VideoCardProps) {
             <Image
               src={video.thumbnailUrl}
               alt={`Thumbnail for ${video.title}`}
-              layout="fill"
-              objectFit="cover"
-              className="group-hover:scale-105 transition-transform duration-300"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-colors duration-300 flex items-center justify-center">
               <PlayCircle className="h-16 w-16 text-white opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
