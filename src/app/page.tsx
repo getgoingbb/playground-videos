@@ -65,6 +65,29 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* Shop CTA strip */}
+      <div style={{ background: '#07142a', borderTop: '1px solid rgba(245,158,11,0.3)', borderBottom: '1px solid rgba(245,158,11,0.3)' }}>
+        <div className="max-w-4xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <p className="text-white font-semibold text-base leading-snug">
+              Want the complete program? Two full-length videos — $9.99 each, or bundle both for $12.99.
+            </p>
+            <p style={{ color: '#94a3b8' }} className="text-sm mt-0.5">
+              Instant download · Own forever · No subscription
+            </p>
+          </div>
+          <a
+            href="https://shop.neverleavetheplayground.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 px-6 py-3 rounded-xl font-bold text-sm transition-opacity hover:opacity-90 whitespace-nowrap"
+            style={{ background: '#f59e0b', color: '#07142a' }}
+          >
+            Get Full Programs — from $9.99 →
+          </a>
+        </div>
+      </div>
+
       {/* Video grid */}
       <div className="max-w-7xl mx-auto px-4 py-12 space-y-8">
         {videos.length > 0 ? (

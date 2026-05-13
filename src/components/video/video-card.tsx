@@ -48,7 +48,7 @@ export function VideoCard({ video }: VideoCardProps) {
           <Link href={video.shopUrl} target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="sm" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground" asChild>
               <>
-                <ShoppingCart className="mr-2 h-4 w-4" /> Get Full Video in Shop
+                <ShoppingCart className="mr-2 h-4 w-4" /> Buy Full Video{video.price ? ` — $${video.price.toFixed(2)}` : ''}
               </>
             </Button>
           </Link>

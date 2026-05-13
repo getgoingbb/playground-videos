@@ -2,7 +2,6 @@
 import { getVideoById, getAllVideos, type Video } from '@/lib/videos';
 import { YoutubeEmbed } from '@/components/video/youtube-embed';
 import { VideoSchemaInjector } from '@/components/video/video-schema';
-import type { GenerateVideoSchemaInput } from '@/ai/flows/generate-video-schema';
 import {notFound} from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -100,7 +99,7 @@ export default async function VideoPage({ params }: VideoPageProps) {
   const prevVideo = currentIndex > 0 ? allVideos[currentIndex - 1] : null;
   const nextVideo = currentIndex < allVideos.length - 1 ? allVideos[currentIndex + 1] : null;
 
-  const videoDataForSchema: GenerateVideoSchemaInput = {
+  const videoDataForSchema = {
     title: video.title,
     description: video.description,
     uploadDate: video.uploadDate,
@@ -111,9 +110,23 @@ export default async function VideoPage({ params }: VideoPageProps) {
     category: video.category,
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_BASE_URL },
+      { "@type": "ListItem", "position": 2, "name": "Videos", "item": `${SITE_BASE_URL}/videos` },
+      { "@type": "ListItem", "position": 3, "name": video.title, "item": `${SITE_BASE_URL}/videos/${video.id}` }
+    ]
+  };
+
   return (
     <>
       <VideoSchemaInjector videoData={videoDataForSchema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-4xl mx-auto">
         <article className="bg-card p-6 sm:p-8 rounded-lg shadow-xl">
           <header className="mb-6">
@@ -143,6 +156,21 @@ export default async function VideoPage({ params }: VideoPageProps) {
             <h2 className="text-2xl font-semibold mb-3 font-headline">About this video</h2>
             <p>{video.description}</p>
           </section>
+
+          {!video.isPremiumPreview && (
+            <div className="mt-6 rounded-xl px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
+              style={{ background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.25)' }}>
+              <div>
+                <p className="font-semibold text-sm" style={{ color: '#fbbf24' }}>Want the full Stephen Jepson program?</p>
+                <p className="text-xs text-muted-foreground mt-0.5">Two complete video programs · $9.99 each · Bundle both for $12.99 · Instant download</p>
+              </div>
+              <Link href="https://shop.neverleavetheplayground.com/" target="_blank" rel="noopener noreferrer"
+                className="shrink-0 px-4 py-2 rounded-lg text-xs font-bold transition-opacity hover:opacity-90 whitespace-nowrap"
+                style={{ background: '#f59e0b', color: '#07142a' }}>
+                Shop Now — from $9.99 →
+              </Link>
+            </div>
+          )}
 
           {video.keywords && (
             <section className="mt-8 pt-6 border-t">
