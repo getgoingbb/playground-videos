@@ -54,6 +54,17 @@ export function Footer() {
           ))}
         </nav>
         <p style={{ margin: 0, fontSize: 12 }}>&copy; {new Date().getFullYear()} Stephen Jepson &mdash; Never Leave The Playground</p>
+        <div style={{ marginTop: 20, paddingTop: 20, borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+          <p style={{ margin: '0 0 12px', color: '#94a3b8', fontSize: 13 }}>Download the <strong style={{ color: '#e2e8f0' }}>Playground Finder</strong> App</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 12 }}>
+            <a href="https://play.google.com/store/apps/details?id=com.neverleavetheplayground.playgroundfinder" target="_blank" rel="noopener noreferrer">
+              <img src="/google-play.png" alt="Get it on Google Play" style={{ height: 40, borderRadius: 6 }} />
+            </a>
+            <a href="https://apps.microsoft.com/detail/9p76brrgkrbd?hl=en-US&gl=US" target="_blank" rel="noopener noreferrer">
+              <img src="/ms-store.png" alt="Download from Windows Store" style={{ height: 40, borderRadius: 6 }} />
+            </a>
+          </div>
+        </div>
       </footer>
     </>
   );
