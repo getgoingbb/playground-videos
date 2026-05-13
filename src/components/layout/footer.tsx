@@ -61,7 +61,7 @@ export function Footer() {
               <img src="/google-play.png" alt="Get it on Google Play" style={{ height: 40, borderRadius: 6 }} />
             </a>
             <a href="https://apps.microsoft.com/detail/9p76brrgkrbd?hl=en-US&gl=US" target="_blank" rel="noopener noreferrer">
-              <img src="/ms-store.png" alt="Download from Windows Store" style={{ height: 40, borderRadius: 6 }} />
+              <img src="/ms-store.webp" alt="Download from Windows Store" style={{ height: 40, borderRadius: 6 }} />
             </a>
           </div>
         </div>
