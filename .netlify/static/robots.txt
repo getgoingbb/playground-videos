@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://videos.neverleavetheplayground.com/sitemap.xml
+Sitemap: https://videos.neverleavetheplayground.com/video-sitemap.xml

@@ -16,7 +16,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link href="https://neverleavetheplayground.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity shrink-0">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Never Leave The Playground Logo"
               width={38}
               height={38}
